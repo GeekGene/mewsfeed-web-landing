@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='robots' content='index,follow' />
+  <title>mewsfeed – where the cool cats talk</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png"> -->
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700" rel="stylesheet">
+
+  <meta property="og:title" content="mewsfeed: for the calm cats">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Come and chill with the other calm cats over on mewsfeed!">
+  <meta property="og:image" content="http://whimsical-walk.surge.sh/img/og-image03.png">
+  <meta property="og:url" content="https://mewsfeed.social">
+  <meta name="twitter:card" content="summary_large_image">
+
+  
+  <style>
+    @font-face {
+      font-family: "Sporting Grotesque";
+      src: url('fonts/Sporting_Grotesque-Regular_web.ttf');
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Syne', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+      background: rgba(255, 42, 234, 0.03);
+      color: rgba(255, 117, 17, 1);
+    }
+    h1 {
+      font-size: 5rem;
+      font-family: 'Sporting Grotesque', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      line-height: 0.83;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    footer {
+      font-size: 0.7rem;
+      position: absolute;
+      padding: 1rem 0.5rem;
+      bottom: 0;
+      width: 100%;
+      color: rgba(255, 117, 17, 1);
+      text-transform: uppercase;
+      z-index: 1000;
+    }
+    .button, .button:visited {
+      /* background: rgba(255, 42, 234, 1); */
+      padding: 1rem 1.5rem;
+      margin: 0 1rem 1rem 0;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 117, 17, 1);
+      color: rgba(255, 117, 17, 1);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .button:hover {
+      background: rgba(255, 117, 17, 1);
+      color: white;
+    }
+
+    .flex {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .flex-inline {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    .left, .right {
+        flex-basis: 50%;
+        padding: 3rem;
+    }
+    .right {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .left {
+      margin-left: -4rem;
+    }
+    a, a:visited {
+      text-decoration: none;
+      color: rgba(255, 117, 17, 1);
+;    }
+    a:hover, a:visited:hover {
+      /* color: black; */
+    }
+    .shadow {
+      /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25); */
+      box-shadow: inset rgba(0, 0, 0, 0) -3px -3px 4px 0px, rgba(0, 0, 0, .2) 0px 30px 100px -20px;
+    }
+    .background {
+      position: absolute; bottom: -80vh; top: 0; left: -80vw; right: 0; opacity: 0.6; z-index: -1;
+      /* background: radial-gradient(50% 50% at 50% 50%, #FF2AEA 0%, rgba(42, 255, 255, 0.748708) 25.13%, rgba(198, 255, 126, 0.373693) 62.63%, rgba(255, 42, 234, 0) 100%); */
+    background: radial-gradient(50% 50% at 50% 50%, #FF2AEA 0%, rgba(42, 255, 255, 0.748708) 25.13%, rgba(255, 234, 126, 0.373693) 62.63%, rgba(255, 119, 42, 0) 100%);
+    }
+
+    /* RESPONSIVE LAYOUT */
+    @media (max-width: 790px) {
+            .flex {
+                /* align-items:normal; */
+            }
+            h1 {
+              font-size: 3rem;
+            }
+            .left, .right {
+                flex-basis: 100%;
+                padding: 1rem;
+            }
+
+            .left {
+              /* margin-top: 3rem; */
+              margin-left: 0rem;
+              order: 2;
+            }
+            .right {
+                order: 1;
+            }
+        }
+
+        /* @media (max-width: 1024px) {
+            h1 {
+              font-size: 4rem;
+            }
+        
+        } */
+
+
+    /* ANIMATIONS */
+    .animate-left {
+      animation-duration: 0.5s;
+      animation-name: animate-left;
+      animation-timing-function: ease;
+      z-index: 100;
+    }
+
+    @keyframes animate-left {
+      0% {
+        opacity: 0.3;
+        /* transform: scale(2, 2); */
+        transform: scale(2, 2) translate(0px, 0px);
+      }
+
+      100% {
+        opacity: 1;
+        /* transform: scale(1, 1); */
+        transform: scale(1, 1) translate(0, 0);
+      }
+    }
+    .animate-right {
+      animation-duration: 0.5s;
+      animation-name: animate-right;
+      animation-timing-function: ease;
+      
+    }
+
+    @keyframes animate-right {
+      0% {
+        opacity: 0.5;
+        /* transform: scale(0.5, 0.5); */
+        transform: translate(400px, 0);
+      }
+      100% {
+        opacity: 1;
+        /* transform: scale(1, 1); */
+        transform: translate(0, 0);
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+    <div class="flex">
+
+        <div class="left animate-left">
+          <img src="img/mewsfeed_slice3.png" width="100%" style=" background-color: rgba(255, 255, 255, 0.2);  border-radius: 30px; " class="shadow"> 
+        </div>
+        
+        <div class="right">
+          <header class="animate-right">
+            <div class="flex-inline">
+              <img src="img/grumpy02.png" style="margin-right: 1rem;">
+              <h2>mewsfeed</h2>
+            </div>
+            <h1>For the calm cats</h1>
+          </header>
+          <!-- <a href="#" class="button animate-right">Download via Holochain launcher</a> -->
+          <a href="https://forms.gle/KW1wV4TZ5tJbpA1q7" class="button animate-right">Sign up for early access</a>
+          <footer>@mewsfeed <script>document.write(new Date().getFullYear());</script> </footer>
+        </div>
+    
+    </div>
+
+    <div class="background"></div>
+
+
+</body>
+</html>
