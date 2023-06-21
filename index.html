@@ -41,7 +41,7 @@
       color: rgba(255, 92, 0, 1);
     }
     h1 {
-      font-size: 9rem;
+      font-size: 9.5rem;
       font-family: 'Sporting Grotesque', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 300;
       font-style: normal;
@@ -135,8 +135,9 @@
     /* RESPONSIVE LAYOUT */
     @media (min-width: 1919px) {
         h1 {
-          font-size: 12rem;    
+          font-size: 13rem;    
         }
+        .right img {width: 70%;}
     }
     @media (max-width: 1025px) {
         h1 {
@@ -168,6 +169,13 @@
           font-size: 5rem;
         }
     
+    }
+    /* HEIGHT EDGE CASES */
+    @media (max-height: 800px) {
+      .left, .right. {padding: 1rem;}
+        h1 {
+          font-size: 6.5rem !important;    
+        }
     }
 
 
@@ -220,7 +228,7 @@
     <div class="flex">
 
         <div class="left animate-left">
-          <img src="img/mewsfeed_slice3.png" width="100%" style=" background-color: rgba(255, 255, 255, 0.4);  border-radius: 30px; " class="shadow"> 
+          <img src="img/mewsfeed_slice3.png" style="width: 100%; max-width: 600px; background-color: rgba(255, 255, 255, 0.4);  border-radius: 30px; " class="shadow"> 
         </div>
         
         <div class="right">
