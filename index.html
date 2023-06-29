@@ -36,7 +36,6 @@
       margin: 0;
       padding: 0;
       font-family: 'Syne', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      overflow: hidden;
       background: rgba(255, 92, 0, 0.01);
       color: rgba(255, 92, 0, 1);
     }
@@ -60,7 +59,7 @@
     }
     footer {
       font-size: 0.7rem;
-      position: absolute;
+      position: fixed;
       padding: 1.5rem;
       bottom: 0;
       right: 0;
@@ -168,6 +167,7 @@
         h1 {
           font-size: 5rem;
         }
+        /* html, body {overflow: visible;} */
     
     }
     /* HEIGHT EDGE CASES */
@@ -242,9 +242,7 @@
           <!-- <a href="#" class="button animate-right">Download via Holochain launcher</a> -->
           <a href="https://forms.gle/KW1wV4TZ5tJbpA1q7" target="_blank" class="button animate-right">Get early access</a>
         </div>
-        <footer>@
-          <script>document.write(new Date().getFullYear());</script>
-        </footer> 
+        <footer>®<script>document.write(new Date().getFullYear());</script></footer> 
     </div>
 
     <!-- <div class="background"></div> -->
